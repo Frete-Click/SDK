@@ -2,10 +2,7 @@
 
 namespace SDK\Client;
 use SDK\Service\freteclick;
-use SDK\Models\origin;
-use SDK\Models\destination;
-use SDK\Models\order;
-use SDK\Models\quote;
+use SDK\Models\quote_request;
 
 class cotafacil{
 
@@ -20,7 +17,7 @@ class cotafacil{
 		return $this;
 	}	
 
-	public function quote(origin $origin,destination $destination){
-		return $this->api->quote($origin,$destination);
+	public function quote($quote_request){
+		return $this->api->quote($quote_request);
 	}	
 }

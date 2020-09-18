@@ -1,10 +1,7 @@
 <?php
 namespace SDK\Service;
 
-use SDK\Models\origin;
-use SDK\Models\destination;
-use SDK\Models\order;
-use SDK\Models\quote;
+use SDK\Models\quote_request;
 
 class freteclick{
 
@@ -27,13 +24,9 @@ class freteclick{
 		return $this;
 	}
 
-	public function quote(origin $origin,destination $destination){		
+	public function quote($quote_request){		
 		$request = $this->api->get(
-			$this->url.'quote',
-			array(
-				'origin'		=> $origin,
-				'destination'	=> $destination
-			)
+			$this->url.'quote',json_encode($quote_request)
 		);
 		$response = $request->send();
 		return $response->getBody();
