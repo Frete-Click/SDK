@@ -1,5 +1,5 @@
 <?php
-namespace FreteClick\SDK;
+namespace freteclick\SDK;
 
 class SDK{
 	

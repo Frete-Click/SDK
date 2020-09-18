@@ -1,5 +1,5 @@
 <?php
-namespace FreteClick\SDK\Service;
+namespace freteclick\SDK\Service;
 
 use guzzlehttp\guzzle;
 

@@ -7,7 +7,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "SDK\\": "src/SDK"
+            "src\\SDK\\": "src/SDK"
         },
         "classmap": [
             "SDK.php"
