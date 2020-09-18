@@ -2,6 +2,6 @@
 namespace SDK\Utils;
 
 
-class validator{
+class Validator{
 
 }

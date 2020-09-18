@@ -1,9 +1,9 @@
 <?php
 
 namespace SDK\Client;
-use SDK\Service\freteclick;
+use SDK\Service\FreteClick;
 
-class gestor{
+class Gestor{
 	private function __construct(){
 
 	}

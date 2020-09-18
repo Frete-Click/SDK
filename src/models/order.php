@@ -2,5 +2,5 @@
 namespace SDK\Models;
 use SDK\Utils\Valitator;
 
-class order{
+class Order{
 }

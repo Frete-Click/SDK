@@ -2,5 +2,5 @@
 namespace SDK\Models;
 use SDK\Utils\Valitator;
 
-class origin{
+class Origin{
 }

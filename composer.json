@@ -9,10 +9,7 @@
 	"autoload": {
         "psr-4": {
             "SDK\\": "src/"
-        },
-        "classmap": [
-            "SDK.php"
-        ]
+        }
     },	
     "authors": [
         {

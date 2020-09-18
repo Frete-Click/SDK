@@ -1,7 +1,7 @@
 <?php
 namespace SDK;
-use SDK\Client\cotafacil;
-use SDK\Client\gestor;
+use SDK\Client\CotaFacil;
+use SDK\Client\Gestor;
 
 class SDK{
 
@@ -13,11 +13,11 @@ class SDK{
 	}
 
 	public function cotaFacilClient(){
-		return cotafacil::getInstance($this->api_key);
+		return CotaFacil::getInstance($this->api_key);
 	}
 
 	public function gestorClient(){
-		return gestor::getInstance($this->api_key);
+		return Gestor::getInstance($this->api_key);
 	}
 
 

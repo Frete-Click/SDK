@@ -1,35 +1,36 @@
 <?php
 namespace SDK\Service;
 
-use SDK\Models\quote_request;
+use SDK\Models\QuoteRequest;
 
-class freteclick{
+class FreteClick{
 
-	private $url = 'https://api.freteclick.com.br/';
-	private $api_key = NULL;	
-	private $api = NULL;	
+	private static $url = 'https://api.freteclick.com.br/';
+	private static $api_key = NULL;	
+	private static $api = NULL;	
 	
 	private function __construct(){}
 
-	protected static function getInstance($api_key){
-		$this->api_key = $api_key;
-		$this->api = new \GuzzleHttp\Client(
+	public static function getInstance($api_key){
+		self::$api_key = $api_key;
+		self::$api = new \GuzzleHttp\Client(
 			[				
 				'headers' => [ 
 					'Accept' => 'application/json',
             		'content-type' => 'application/ld+json',
-					'api-token' => $this->api_key
+					'api-token' => self::$api_key
 				]
-			]);
-		return $this;
+			]);	
+	    return __CLASS__;	
 	}
 
-	public function quote($quote_request){		
-		$request = $this->api->get(
-			$this->url.'quote',json_encode($quote_request)
-		);
-		$response = $request->send();
-		return $response->getBody();
+	public static function quote($quote_request){				
+
+		$response = self::$api->request('POST', self::$url.'quotes', [
+		    'json'   => $quote_request
+		]);		
+		
+		return $response->getBody()->getContents();
 	}
 
 }
