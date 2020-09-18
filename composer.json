@@ -1,0 +1,14 @@
+{
+    "name": "freteclick/sdk",
+    "description": "SDK da plataforma Frete Click",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "authors": [
+        {
+            "name": "Luiz Kim",
+            "email": "luiz.kim@controleonline.com"
+        }
+    ]
+}
