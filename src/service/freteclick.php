@@ -24,7 +24,7 @@ class FreteClick{
 	    return __CLASS__;	
 	}
 
-	public static function quote($quote_request){				
+	public static function quote(QuoteRequest $quote_request){				
 
 		$response = self::$api->request('POST', self::$url.'quotes', [
 		    'json'   => $quote_request
