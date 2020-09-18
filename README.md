@@ -8,7 +8,9 @@ https://api.freteclick.com.br
 composer require freteclick/sdk
 
 #Uso
-use freteclick\SDK;
+
+<pre>
+ use freteclick\SDK;
 
  $origin = new freteclick\SDK\Models\Origin(); 
  $destination = new freteclick\SDK\Models\Destination();
@@ -17,6 +19,5 @@ use freteclick\SDK;
  $cotafacil = $SDK->cotaFacilClient();
  $result = $cotafacil->quote($origin,$destination);
  
- echo '<pre>';
- print_r($result);
- echo '</pre>';
+ print_r($result); 
+ </pre>
