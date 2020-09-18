@@ -1,7 +1,7 @@
 <?php
 
-namespace SDK\Client;
-use SDK\Service\freteclick;
+namespace freteclick\SDK\Client;
+use freteclick\SDK\Service\freteclick;
 
 class gestor{
 	private function __construct(){

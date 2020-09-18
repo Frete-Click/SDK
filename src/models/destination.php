@@ -1,6 +1,6 @@
 <?php
-namespace SDK\Models;
-use SDK\Utils\Valitator;
+namespace freteclick\SDK\Models;
+use freteclick\SDK\Utils\Valitator;
 
 class destination{
 }

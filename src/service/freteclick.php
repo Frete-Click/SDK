@@ -1,7 +1,7 @@
 <?php
-namespace SDK\Service;
+namespace freteclick\SDK\Service;
 
-use SDK\Models\quote_request;
+use freteclick\SDK\Models\quote_request;
 
 class freteclick{
 

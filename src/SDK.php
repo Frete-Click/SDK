@@ -1,5 +1,5 @@
 <?php
-namespace SDK;
+namespace freteclick;
 use SDK\Client\cotafacil;
 use SDK\Client\gestor;
 

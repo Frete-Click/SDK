@@ -8,7 +8,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "freteclick\\SDK\\": "."
+            "freteclick\\SDK\\": "src"
         },
         "classmap": [
             "SDK.php"

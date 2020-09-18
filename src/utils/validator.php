@@ -1,5 +1,5 @@
 <?php
-namespace SDK\Utils;
+namespace freteclick\SDK\Utils;
 
 
 class validator{
