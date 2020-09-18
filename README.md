@@ -10,7 +10,6 @@ composer require freteclick/sdk
 #Uso
 
 <pre>
-<?php
  use freteclick\SDK;
 
  $origin = new freteclick\SDK\Models\Origin(); 
@@ -21,5 +20,4 @@ composer require freteclick/sdk
  $result = $cotafacil->quote($origin,$destination);
  
  print_r($result); 
-?>
 </pre>
