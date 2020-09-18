@@ -8,7 +8,7 @@ use SDK\Models\quote;
 
 class freteclick{
 
-	private $url = 'https://api.freteclick.com.br';
+	private $url = 'https://api.freteclick.com.br/';
 	private $api_key = NULL;	
 	private $api = NULL;	
 	
@@ -17,8 +17,7 @@ class freteclick{
 	protected static function getInstance($api_key){
 		$this->api_key = $api_key;
 		$this->api = new \GuzzleHttp\Client(
-			[
-				'url' => $this->url,
+			[				
 				'headers' => [ 
 					'Accept' => 'application/json',
             		'content-type' => 'application/ld+json',
@@ -30,6 +29,7 @@ class freteclick{
 
 	public function quote(origin $origin,destination $destination){		
 		$request = $this->api->get(
+			$this->url.'quote',
 			array(
 				'origin'		=> $origin,
 				'destination'	=> $destination
