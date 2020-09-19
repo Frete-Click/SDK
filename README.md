@@ -10,15 +10,14 @@ composer require freteclick/sdk
 #Uso
 
 <pre>
-use SDK\SDK;
-use SDK\Models\QuoteRequest;
+ use freteclick\SDK;
 
-$api_key = 'private';
-$SDK = new SDK($api_key);
-$cotafacil = $SDK->cotaFacilClient();
+ $origin = new freteclick\SDK\Models\Origin(); 
+ $destination = new freteclick\SDK\Models\Destination();
 
-$QuoteRequest = new QuoteRequest();
-$result = $cotafacil::quote($QuoteRequest);
+ $SDK = new SDK($api_key);
+ $cotafacil = $SDK->cotaFacilClient();
+ $result = $cotafacil->quote($origin,$destination);
  
- print_r($result);
+ print_r($result); 
 </pre>
