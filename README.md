@@ -5,7 +5,9 @@ https://api.freteclick.com.br
 
 
 # Instalação
+<pre>
 composer require freteclick/sdk
+</pre>
 
 #Uso
 
