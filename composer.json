@@ -4,7 +4,7 @@
     "description": "SDK da plataforma Frete Click",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.2"
     },
 	"autoload": {
         "psr-4": {
