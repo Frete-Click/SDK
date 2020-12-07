@@ -2,7 +2,7 @@
 namespace SDK\Service;
 
 use GuzzleHttp\Client as GuzzClient;
-use GuzzleHttp\Message\RequestInterface;
+use GuzzleHttp\Message\ResponseInterface;
 
 class API
 {
@@ -16,7 +16,7 @@ class API
 		$this->apiKey   = $apiKey;
 	}
 
-	public function private(string $method, string $resource, $options = []): RequestInterface
+	public function private(string $method, string $resource, $options = []): ResponseInterface
 	{
 		if (empty($this->apiKey))
 			throw new \Exception('API key can not be empty');
@@ -33,7 +33,7 @@ class API
 		return $client->send($request);
 	}
 
-	public function public(string $method, string $resource, $options = []): RequestInterface
+	public function public(string $method, string $resource, $options = []): ResponseInterface
 	{
 		$client  = new GuzzClient();
 		$request = $client->createRequest($method, $this->endpoint, $options);
