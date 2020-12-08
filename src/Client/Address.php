@@ -35,7 +35,6 @@ class Address
       return null;
 
     } catch (\Exception $e) {
-      die($e->getMessage());
       return null;
     }
   }
