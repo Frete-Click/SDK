@@ -2,7 +2,7 @@
 
 namespace SDK\Client;
 
-use SDK\Service\API;
+use SDK\Core\Client\API;
 
 class Address
 {

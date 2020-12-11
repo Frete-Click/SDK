@@ -1,5 +1,5 @@
 <?php
-namespace SDK\Service;
+namespace SDK\Core\Client;
 
 use GuzzleHttp\Client as GuzzClient;
 use GuzzleHttp\Message\ResponseInterface;
