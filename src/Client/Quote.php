@@ -35,8 +35,6 @@ class Quote
 
           return $result->response->data->order;
         }
-
-        return null;
       }
 
       return null;

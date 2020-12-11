@@ -29,7 +29,6 @@ class Address
 
         if (isset($result->id))
           return $result;
-        return null;
       }
 
       return null;
