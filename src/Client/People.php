@@ -76,7 +76,7 @@ class People
   {
     try {
 
-      $response = $this->api->private('GET', sprintf('/email/find?email=%s', $email));
+      $response = $this->api->private('GET', '/email/find', ['query' => ['email' => $email]]);
 
       if ($response->getStatusCode() === 200) {
         $result = json_decode($response->getBody());
