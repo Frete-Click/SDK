@@ -18,7 +18,7 @@ class Address
     $this->api = $api;
   }
 
-  public function getAddressByCEP(string $cep): ?object
+  public function getAddressByCEP(string $cep)
   {
     try {
 

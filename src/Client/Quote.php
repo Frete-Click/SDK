@@ -20,7 +20,7 @@ class Quote
     $this->api = $api;
   }
 
-  public function simulate(array $data): ?object
+  public function simulate(array $data)
   {
     try {
 
