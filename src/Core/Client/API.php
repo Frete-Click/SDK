@@ -6,7 +6,7 @@ use GuzzleHttp\Message\ResponseInterface;
 
 class API
 {
-	private $endpoint = null;
+	private $endpoint = 'https://api.freteclick.com.br';
 	private $apiKey   = null;	
 
 	public function __construct(string $apiKey)
