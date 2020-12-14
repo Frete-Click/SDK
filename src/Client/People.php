@@ -19,7 +19,7 @@ class People
     $this->api = $api;
   }
 
-  public function getMe(): ?object
+  public function getMe()
   {
     try {
 
@@ -45,7 +45,7 @@ class People
     }
   }
 
-  public function createCustomer(array $data): ?int
+  public function createCustomer(array $data)
   {
     try {
 
@@ -72,7 +72,7 @@ class People
     }
   }
 
-  public function getIdByEmail(string $email): ?int
+  public function getIdByEmail(string $email)
   {
     try {
 

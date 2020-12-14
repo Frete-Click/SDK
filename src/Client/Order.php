@@ -19,7 +19,7 @@ class Order
     $this->api = $api;
   }
 
-  public function finishCheckout(int $orderId, array $data): ?bool
+  public function finishCheckout(int $orderId, array $data)
   {
     try {
 
