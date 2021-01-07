@@ -2,7 +2,7 @@
 
 namespace SDK\Client;
 
-use SDK\Service\API;
+use SDK\Core\Client\API;
 use SDK\Exception\FCClientException;
 use GuzzleHttp\Exception\ClientException;
 
@@ -20,7 +20,7 @@ class Quote
     $this->api = $api;
   }
 
-  public function simulate(array $data): ?object
+  public function simulate(array $data)
   {
     try {
 
@@ -35,8 +35,6 @@ class Quote
 
           return $result->response->data->order;
         }
-
-        return null;
       }
 
       return null;

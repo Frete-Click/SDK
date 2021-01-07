@@ -1,19 +1,17 @@
 <?php
-namespace SDK\Service;
+namespace SDK\Core\Client;
 
 use GuzzleHttp\Client as GuzzClient;
 use GuzzleHttp\Message\ResponseInterface;
 
 class API
 {
-
-	private $endpoint = null;
+	private $endpoint = 'https://api.freteclick.com.br';
 	private $apiKey   = null;	
 
-	public function __construct(string $endpoint, string $apiKey)
+	public function __construct(string $apiKey)
 	{
-		$this->endpoint = $endpoint;
-		$this->apiKey   = $apiKey;
+		$this->apiKey = $apiKey;
 	}
 
 	public function private(string $method, string $resource, $options = []): ResponseInterface

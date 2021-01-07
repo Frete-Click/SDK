@@ -2,7 +2,7 @@
 
 namespace SDK\Client;
 
-use SDK\Service\API;
+use SDK\Core\Client\API;
 
 class Address
 {
@@ -18,7 +18,7 @@ class Address
     $this->api = $api;
   }
 
-  public function getAddressByCEP(string $cep): ?object
+  public function getAddressByCEP(string $cep)
   {
     try {
 
@@ -29,7 +29,6 @@ class Address
 
         if (isset($result->id))
           return $result;
-        return null;
       }
 
       return null;
