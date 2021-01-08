@@ -42,4 +42,28 @@ class Order
       return null;
     }
   }
+
+  public function getQuotationTotal(int $quotationId)
+  {
+    try {
+
+      $response = $this->api->private('GET', sprintf('/quotations/%s', $quotationId));
+
+      if ($response->getStatusCode() === 200) {
+        $result = json_decode($response->getBody());
+
+        if (empty($result) === false) {
+          return ((float) $result->total);
+        }
+      }
+
+      return null;
+
+    } catch (\Exception $e) {
+      if ($e instanceof FCClientException)
+        throw new \Exception($e->getMessage());
+
+      return null;
+    }
+  }
 }
