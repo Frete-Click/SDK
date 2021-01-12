@@ -82,10 +82,9 @@ class People
         $result = json_decode($response->getBody());
 
         if (isset($result->response)) {
-          if ($result->response->success === false)
-            throw new FCClientException($result->response->error);
-
-          return $result->response->data->people_id;
+          if ($result->response->success === true) {
+            return $result->response->data->people_id;
+          }
         }
       }
 
