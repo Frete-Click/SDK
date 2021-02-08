@@ -23,7 +23,7 @@ use SDK\Models\Origin;
 use SDK\Models\Destination;
 use SDK\Models\Config;
 
-
+$api_key = '';
 $quote_request = new QuoteRequest();
 
 $config = new Config();
@@ -86,7 +86,7 @@ $package->setProductType('Móveis');
 $package->setProductPrice(100);
 
 
-$SDK = new SDK('242c5d6f05fd292bc91fd67170dc5a04');
+$SDK = new SDK($api_key);
 $cotafacil = $SDK->cotaFacilClient();			
 $array_resp = $cotafacil::quote($quote_request);	
 
