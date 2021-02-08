@@ -12,6 +12,10 @@ composer require freteclick/sdk
 #Uso
 
 <pre>
+<?php
+
+require_once ('vendor/autoload.php');
+
 use SDK\SDK;
 use SDK\Models\QuoteRequest;
 use SDK\Models\Package;
@@ -25,37 +29,67 @@ $quote_request = new QuoteRequest();
 $config = new Config();
 $config->setQuoteType('full');
 $config->setOrder('total');
+
+
+
 $quote_request->setConfig($config);
 
-$origin = new freteclick\SDK\Models\Origin();  
-$origin->setCEP($cep);
-$origin->setStreet($street);
-$origin->setNumber($number);
-$origin->setComplement($complement);
-$origin->setDistrict($district);
-$origin->setCity($city);
-$origin->setState($state);
-$origin->setCountry($country); 
+$origin = new Origin();  
+$origin->setCEP('07060000');
+$origin->setStreet('Alameda yayá');
+$origin->setNumber(424);
+$origin->setComplement('');
+$origin->setDistrict('Jd Aliança');
+$origin->setCity('Guarulhos');
+$origin->setState('SP');
+$origin->setCountry('Brasil'); 
 $quote_request->setOrigin($origin);
 
 
 
-$destination = new freteclick\SDK\Models\Destination(); 
-$destination->setCEP($cep);
-$destination->setStreet($street);
-$destination->setNumber($number);
-$destination->setComplement($complement);
-$destination->setDistrict($district);
-$destination->setCity($city);
-$destination->setState($state);
-$destination->setCountry($country); 	
+$destination = new Destination(); 
+$destination->setCEP('07060000');
+$destination->setStreet('Alameda yayá');
+$destination->setNumber(424);
+$destination->setComplement('');
+$destination->setDistrict('Jd Aliança');
+$destination->setCity('Guarulhos');
+$destination->setState('SP');
+$destination->setCountry('Brasil'); 
 $quote_request->setDestination($destination);  
 
 
-$SDK = new SDK($api_key);
+/*
+* Pacote 1
+*/
+$package = new Package();
+$package->setQuantity(1);
+$package->setWeight(0.2);
+$package->setHeight(0.2);
+$package->setWidth(0.2);
+$package->setDepth(0.2);
+$package->setProductType('Móveis');
+$package->setProductPrice(100);
+$quote_request->addPackage($package);
+
+
+/*
+* Pacote 2
+*/
+$package = new Package();
+$package->setQuantity(5);
+$package->setWeight(0.2);
+$package->setHeight(0.2);
+$package->setWidth(0.2);
+$package->setDepth(0.2);
+$package->setProductType('Móveis');
+$package->setProductPrice(100);
+
+
+$SDK = new SDK('242c5d6f05fd292bc91fd67170dc5a04');
 $cotafacil = $SDK->cotaFacilClient();			
 $array_resp = $cotafacil::quote($quote_request);	
 
 
 print_r($array_resp); 
-</pre>
+
