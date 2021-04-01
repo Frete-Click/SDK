@@ -29,8 +29,15 @@ class Order
       if ($response->getStatusCode() === 200) {
         $result = json_decode($response->getBody());
 
-        if (empty($result) === false)
-          return true;
+        if (empty($result) === true)
+          throw new FCClientException('Empty response');
+
+        if (isset($result->response)) {
+          if ($result->response->success === false)
+            throw new FCClientException($result->response->error);
+
+          return $result->response->data->peopleId;
+        }
       }
 
       return null;
