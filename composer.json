@@ -1,5 +1,5 @@
 {
-    "name": "freteclick/sdk",
+    "name": "frete-click/sdk",
     "license": "MIT",
     "description": "SDK da plataforma Frete Click",
     "type": "library",
