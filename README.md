@@ -1,6 +1,6 @@
 # SDK
 
-SDK para a API da plataforma Frete Click
+Este pacote é responsável por realizar o cálculo de cotações com API Frete Click.
 https://api.freteclick.com.br
 
 
