@@ -1,8 +1,12 @@
 {
     "name": "freteclick/sdk",
     "license": "MIT",
-    "description": "SDK da plataforma Frete Click",
-    "type": "library",	
+    "description": "Este pacote é responsável por realizar o cálculo de cotações com API Frete Click.",
+    "keywords": [
+        "freteclick",
+        "sdk"
+    ],
+    "type": "library",
     "authors": [
         {
             "name": "Frete Click",
@@ -10,11 +14,13 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "~5.0"
+        "php": "^7.2",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.5"
     },
-	"autoload": {
+    "autoload": {
         "psr-4": {
-            "freteclick\\sdk\\": "src/"
+            "SDK\\": "src"
         }
-    }
+    }	
 }
