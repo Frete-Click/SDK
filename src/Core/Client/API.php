@@ -52,7 +52,7 @@ class API
 			throw new \Exception('API client can not be empty');
 
 		$params = array_combine(str_replace('*', '', array_keys((array)$options)), (array) $options);
-		$response = $this->guzzle_client->request('POST', $this->endpoint . $resource, ['json'   => $params]);
+		$response = $this->guzzle_client->request($method, $this->endpoint . $resource, ['json'   => $params]);
 
 		return $response;
 
