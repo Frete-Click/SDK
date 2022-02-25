@@ -3,14 +3,9 @@
 namespace SDK\Client;
 use SDK\Service\FreteClick;
 
-class Gestor{
-	private function __construct(){
+class Gestor  extends FreteClick{
 
-	}
 
-	protected function getInstance($api_key){
-		$this->api_key = $api_key;
-		return $this;
-	}	
+
 
 }

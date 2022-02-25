@@ -1,24 +1,24 @@
 <?php
 
-require_once ('../vendor/autoload.php');
+require_once('../vendor/autoload.php');
 
-
-use SDK\SDK;
+use SDK\Client\Quote;
+use SDK\Core\Client\API;
 use SDK\Models\QuoteRequest;
 use SDK\Models\Package;
 use SDK\Models\Origin;
 use SDK\Models\Destination;
 use SDK\Models\Config;
-
+use SDK\SDK;
 
 $quote_request = new QuoteRequest();
 
 $config = new Config;
 $config->setQuoteType('full');
 $config->setOrder('total');
-$quote_request->setConfig($config); 
+$quote_request->setConfig($config);
 
-$origin = new Origin();  
+$origin = new Origin();
 $origin->setCEP('07060000');
 $origin->setStreet('Alameda yayá');
 $origin->setNumber(424);
@@ -26,12 +26,12 @@ $origin->setComplement('');
 $origin->setDistrict('Jd Aliança');
 $origin->setCity('Guarulhos');
 $origin->setState('SP');
-$origin->setCountry('Brasil'); 
+$origin->setCountry('Brasil');
 $quote_request->setOrigin($origin);
 
 
 
-$destination = new Destination(); 
+$destination = new Destination();
 $destination->setCEP('07060000');
 $destination->setStreet('Alameda yayá');
 $destination->setNumber(424);
@@ -39,8 +39,8 @@ $destination->setComplement('');
 $destination->setDistrict('Jd Aliança');
 $destination->setCity('Guarulhos');
 $destination->setState('SP');
-$destination->setCountry('Brasil'); 
-$quote_request->setDestination($destination);  
+$destination->setCountry('Brasil');
+$quote_request->setDestination($destination);
 
 
 /*
@@ -72,11 +72,16 @@ $package->setProductPrice(100);
 /**
  * API KEY
  */
-$api_key = "";
+$api_key = "5285b8cb1e59e874558c69d1cbc5606e";
 
-$SDK = new SDK($api_key);
-$cotafacil = $SDK->cotaFacilClient();			
-$array_resp = $cotafacil::quote($quote_request);	
+try {
 
+    $SDK = new SDK($api_key, 'Woo Commerce');
+    $SDK = new Quote($SDK->cotaFacilClient());
+    $array_resp = $SDK->simulate($quote_request);
 
-print_r($array_resp); 
+    //print_r($array_resp);
+
+} catch (\Exception $e) {
+    echo $e->getMessage();
+}

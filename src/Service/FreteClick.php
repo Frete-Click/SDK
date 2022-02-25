@@ -1,64 +1,23 @@
 <?php
+
 namespace SDK\Service;
 
-use SDK\Models\QuoteRequest;
-use SDK\Models\Order;
-use SDK\Models\Config;
-use SDK\Models\Quote;
-use SDK\Models\Error;
+use SDK\Core\Client\API;
 
-class FreteClick{
+class FreteClick
+{
+	private static $api_key = null;
+	private static $client = null;
 
-	private static $url = 'https://api.freteclick.com.br/';
-	private static $api_key = null;	
-	private static $api = null;	
-	private static $config = null;
-	private static $response = null;	
-	
-	private function __construct(){}
-
-	public static function getInstance($api_key){
-		self::$api_key = $api_key;		
-		self::$api = new \GuzzleHttp\Client(
-			[				
-				'headers' => [ 
-					'Accept' => 'application/json',
-            		'content-type' => 'application/ld+json',
-					'api-token' => self::$api_key
-				]
-			]);	
-	    return __CLASS__;	
+	private function __construct()
+	{
 	}
 
-	public static function quote(QuoteRequest $quote_request){
-		self::$config = $quote_request->getConfig();		
+	public static function getInstance($api_key, $client)
+	{
+		self::$api_key = $api_key;
+		self::$client = $client;
 
-		$response = self::$api->request('POST', self::$url.'quotes', [
-		    'json'   => array(
-				'origin' => $quote_request->getOrigin(),
-				'destination' => $quote_request->getDestination(),
-				'productTotalPrice' => $quote_request->getProductTotalPrice(),
-				'productType' => $quote_request->getProductType(),				
-				'packages' => $quote_request->getPackages(),
-				'contact' => $quote_request->getContact(),
-				'order' => $quote_request->getConfig()->getOrder(),
-				'quote_type' => $quote_request->getConfig()->getQuoteType()
-		    )
-		]);		
-		
-		return $response->getBody()->getContents();
-	}	
-
-	public static function getResponse(){
-		return self::$response;
+		return  new API(self::$api_key, self::$client);
 	}
-
-	protected static function addError($error){
-		Error::addError($error);
-	}
-
-	public static function getErrors(){
-		return Error::getErrors();
-	}
-
 }
