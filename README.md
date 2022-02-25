@@ -11,6 +11,16 @@ composer install
 </pre>
 
 
-# Uso
+# Dependências
+
+<pre>
+require
+PHP >= ^7.2
+Ext-json = *
+Guzzlehttp/guzzle >= 6.5
+</pre>
+
+# Exemplos
 <pre>
 Follow the examples in /examples.
+</pre>
