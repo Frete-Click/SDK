@@ -72,7 +72,7 @@ $package->setProductPrice(100);
 /**
  * API KEY
  */
-$api_key = "242c5d6f05fd292bc91fd67170dc5a04";
+$api_key = "";
 
 $SDK = new SDK($api_key);
 $cotafacil = $SDK->cotaFacilClient();			
