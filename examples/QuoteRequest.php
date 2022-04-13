@@ -1,6 +1,6 @@
 <?php
 
-require_once ('vendor/autoload.php');
+require_once ('../vendor/autoload.php');
 
 
 use SDK\SDK;
@@ -14,7 +14,7 @@ use SDK\Models\Config;
 $quote_request = new QuoteRequest();
 
 $config = new Config;
-$config->setQuoteType('full');
+$config->setQuoteType('simple');
 $config->setOrder('total');
 $quote_request->setConfig($config); 
 
@@ -72,7 +72,7 @@ $package->setProductPrice(100);
 /**
  * API KEY
  */
-$api_key = "";
+$api_key = "242c5d6f05fd292bc91fd67170dc5a04";
 
 $SDK = new SDK($api_key);
 $cotafacil = $SDK->cotaFacilClient();			
