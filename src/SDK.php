@@ -7,18 +7,17 @@ class SDK{
 
 	private $api_key = NULL;	
 
-	public function __construct($api_key,$client){
+	public function __construct($api_key){
 		$this->api_key = $api_key;
-		$this->client = $client;
 		return $this;
 	}
 
 	public function cotaFacilClient(){
-		return CotaFacil::getInstance($this->api_key,$this->client);
+		return CotaFacil::getInstance($this->api_key);
 	}
 
 	public function gestorClient(){
-		return Gestor::getInstance($this->api_key,$this->client);
+		return Gestor::getInstance($this->api_key);
 	}
 
 
