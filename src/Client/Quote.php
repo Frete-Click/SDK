@@ -20,19 +20,40 @@ class Quote
     $this->api = $api;
   }
 
-  public function simulate(object $data)
+  public function simulate(array $data)
   {
     try {
 
-      return $this->api->private('POST', '/quotes', $data);
-      
-    } catch (\Exception $e) {
+      $response = $this->api->private('POST', '/quotes', ['json' => $data]);
 
+      if ($response->getStatusCode() === 200) {
+        $result = json_decode($response->getBody());
+
+        if (isset($result->response)) {
+          if ($result->response->success === false)
+            throw new FCClientException($result->response->error);
+
+          return $result->response->data->order;
+        }
+      }
+
+      return null;
+
+    } catch (\Exception $e) {
       if ($e instanceof FCClientException)
         throw new \Exception($e->getMessage());
 
-      throw new \Exception($e);
-      return $e;
+      if ($e instanceof ClientException && $e->hasResponse()) {
+        $response = $e->getResponse();
+
+        if ($response->getStatusCode() === 400) {
+          $contents = $response->getBody() !== null ? json_decode($response->getBody()->getContents()) : null;
+
+          throw new \Exception($contents->detail);
+        }
+      }
+
+      return null;
     }
   }
 }
