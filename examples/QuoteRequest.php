@@ -14,8 +14,9 @@ use SDK\Models\Config;
 $quote_request = new QuoteRequest();
 
 $config = new Config;
-$config->setQuoteType('simple');
+$config->setQuoteType('full'); // simple or full
 $config->setOrder('total');
+$config->setNoRetrieve(false); // false or true
 $quote_request->setConfig($config); 
 
 $origin = new Origin();  
@@ -72,7 +73,7 @@ $package->setProductPrice(100);
 /**
  * API KEY
  */
-$api_key = "";
+$api_key = "242c5d6f05fd292bc91fd67170dc5a04";
 
 $SDK = new SDK($api_key);
 $cotafacil = $SDK->cotaFacilClient();			
