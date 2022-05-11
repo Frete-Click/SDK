@@ -14,8 +14,9 @@ use SDK\Models\Config;
 $quote_request = new QuoteRequest();
 
 $config = new Config;
-$config->setQuoteType('simple');
+$config->setQuoteType('full'); // simple or full
 $config->setOrder('total');
+$config->setNoRetrieve(false); // false or true
 $quote_request->setConfig($config); 
 
 $origin = new Origin();  
