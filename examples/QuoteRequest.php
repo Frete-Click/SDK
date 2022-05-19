@@ -17,6 +17,7 @@ $config = new Config;
 $config->setQuoteType('full'); // simple or full
 $config->setOrder('total');
 $config->setNoRetrieve(false); // false or true
+$config->setAppType('Wordpress'); // (string) type of aplication, example Wordpress
 $quote_request->setConfig($config); 
 
 $origin = new Origin();  

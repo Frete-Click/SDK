@@ -8,6 +8,7 @@ class Config{
 	protected $quote_type = 'simple';
 	protected $increase_deadline = 0;
 	protected $no_retrieve = false;
+	protected $app_type = '';
 
 
 	public function getOrder(){
@@ -45,4 +46,14 @@ class Config{
 	public function getNoRetrieve(){
 		return $this->no_retrieve;
 	}
+
+	public function setAppType($app_type){
+		$this->app_type = $app_type;
+		return $this;
+	}
+
+	public function getAppType(){
+		return $this->app_type;
+	}
+
 }
