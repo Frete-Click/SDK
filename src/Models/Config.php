@@ -9,6 +9,7 @@ class Config{
 	protected $increase_deadline = 0;
 	protected $no_retrieve = false;
 	protected $app_type = '';
+	protected $deny_carriers = null;
 
 
 	public function getOrder(){
@@ -54,6 +55,17 @@ class Config{
 
 	public function getAppType(){
 		return $this->app_type;
+	}
+
+	public function setDenyCarriers($deny_carriers)
+	{
+		$this->deny_carriers = $deny_carriers;
+		return $this;
+	}
+
+	public function getDenyCarriers()
+	{
+		return $this->deny_carriers;
 	}
 
 }
