@@ -10,7 +10,7 @@ class Config{
 	protected $no_retrieve = false;
 	protected $app_type = '';
 	protected $deny_carriers = null;
-	protected $marketplace = true;
+	protected $marketPlace = true;
 	protected $noCache = true;
 
 
@@ -69,15 +69,15 @@ class Config{
 		return $this->app_type;
 	}
 
-	public function setMarketPlace ($marketplace)
+	public function setMarketPlace ($marketPlace)
 	{
-		$this->marketplace = $marketplace;
+		$this->marketPlace = $marketPlace;
 		return $this;
 	}
 
 	public function getMarketPlace ()
 	{
-		return $marketplace;
+		return $marketPlace;
 	}
 
 	public function setNoCache ($noCache)
