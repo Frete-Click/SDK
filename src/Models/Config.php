@@ -75,7 +75,7 @@ class Config{
 		return $this;
 	}
 
-	public function getMarketPlace ($marketplace)
+	public function getMarketPlace ()
 	{
 		return $marketplace;
 	}
