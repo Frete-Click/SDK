@@ -12,6 +12,7 @@ class Config{
 	protected $deny_carriers = null;
 	protected $marketPlace = true;
 	protected $noCache = true;
+	protected $domain = '';
 
 
 	public function getOrder ()
@@ -77,7 +78,18 @@ class Config{
 
 	public function getMarketPlace ()
 	{
-		return $marketPlace;
+		return $this->marketPlace;
+	}
+
+	public function setDomain ($domain)
+	{
+		$this->domain = $domain;
+		return $this;
+	}
+
+	public function getDomain () 
+	{
+		return $this->domain;
 	}
 
 	public function setNoCache ($noCache)
